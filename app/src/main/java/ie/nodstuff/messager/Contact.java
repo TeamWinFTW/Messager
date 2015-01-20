@@ -2,6 +2,7 @@ package ie.nodstuff.messager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nodstuff on 15/01/15.
@@ -10,7 +11,7 @@ public class Contact implements Serializable{
 
     private String name;
     private String id;
-    private ArrayList<Message> messageList;
+    private List<Message> messageList;
 
     public String getName() {
         return name;
@@ -37,7 +38,7 @@ public class Contact implements Serializable{
     public Contact(String name, String id){
         this.name=name;
         this.id=id;
-        messageList=new ArrayList<Message>();
+        messageList=new ArrayList<>();
     }
 
     public void addMessage(Message m){
@@ -45,4 +46,7 @@ public class Contact implements Serializable{
     }
 
 
+    public List<Message> getMessageList(){
+        return messageList;
+    }
 }
