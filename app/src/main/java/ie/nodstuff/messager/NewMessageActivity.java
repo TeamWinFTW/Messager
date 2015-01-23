@@ -1,6 +1,7 @@
 package ie.nodstuff.messager;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,11 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+import java.io.IOException;
 
 
 public class NewMessageActivity extends ActionBarActivity {
 
     private Contact recipient;
+
+    private String id="";
 
 
     @Override
@@ -23,7 +29,6 @@ public class NewMessageActivity extends ActionBarActivity {
         setContentView(R.layout.activity_new_message);
         setup();
         setupButton();
-
     }
 
 
@@ -83,5 +88,7 @@ public class NewMessageActivity extends ActionBarActivity {
         t.setText(recipient.getName());
 
     }
+
+
 
 }
